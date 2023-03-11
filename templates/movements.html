@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block body %}
+    <h1>Product Movement List</h1>
+    <table class="master_table">
+        <tr>
+            <th>Movement ID</th>
+            <th>TimeStamp</th>
+            <th>Product ID</th>
+            <th>Product Qty</th>
+            <th>From Location</th>
+            <th>To Location</th>
+            <th>Function</th>
+        </tr>
+        {% for movement in movements %}
+        <tr>
+            <td>{{movement.movement_id}}</td>
+            <td>{{movement.timestamp}}</td>
+            <td>{{movement.product_id}}</td>
+            <td>{{movement.product_qty}}</td>
+            <td>{{movement.from_location}}</td>
+            <td>{{movement.to_location}}</td>
+            <td>
+                <form action="movement/edit/{{movement.movement_id}}" method="POST">
+                    {{mov_form.edit_mov}}
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <form action="/movement", method="POST">
+                {{mov_form.csrf_token}}
+                <td></td>
+                <td></td>
+                <td>{{mov_form.prod_id_mov}}</td>
+                <td>{{mov_form.prod_qty_mov}}</td>
+                <td>{{mov_form.from_loc}}</td>
+                <td>{{mov_form.to_loc}}</td>
+                <td>{{mov_form.add_mov}}</td>
+            </form>
+        </tr>
+    </table>
+{% endblock %}

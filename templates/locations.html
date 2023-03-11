@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block body %}
+    <h1>Location List</h1>
+    <table class="master_table">
+        <tr>
+            <th>Location ID</th>
+            <th>Location Name</th>
+            <th>Function</th>
+        </tr>
+        {% for location in locations %}
+        <tr>
+            <td>{{location.location_id}}</td>
+            <td>{{location.location_name}}</td>
+            <td>
+                <form action="location/edit/{{location.location_id}}" method="POST">
+                    {{loc_form.edit_loc}}
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <form action="/location", method="POST">
+                {{loc_form.csrf_token}}
+                <td></td>
+                <td>{{loc_form.name_loc}}</td>
+                <td>{{loc_form.add_loc}}</td>
+            </form>
+        </tr>
+    </table>
+
+{% endblock %}

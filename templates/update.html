@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href='{{url_for("static", filename="css/styles.css")}}'>
+</head>
+<body>
+    <h1>Please Update the Selected Value</h1>
+    {% if type == "product" %}
+    <table class="master_table">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Qty</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>{{product.product_id}}</td>
+            <td>{{product.product_name}}</td>
+            <td>{{product.product_qty}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <form action="../update/{{product.product_id}}", method="POST">
+                {{prod_form.csrf_token}}
+                <td></td>
+                <td>{{prod_form.name_prod}}</td>
+                <td>{{prod_form.qty_prod}}</td>
+                <td>{{prod_form.edit_prod}}</td>
+            </form>
+        </tr>
+    {% endif %}
+    {% if type == "location" %}
+    <table class="master_table">
+        <tr>
+            <th>Location ID</th>
+            <th>Location Name</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>{{location.location_id}}</td>
+            <td>{{location.location_name}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <form action="../update/{{location.location_id}}", method="POST">
+                {{loc_form.csrf_token}}
+                <td></td>
+                <td>{{loc_form.name_loc}}</td>
+                <td>{{loc_form.edit_loc}}</td>
+            </form>
+        </tr>
+    {% endif %}
+    {% if type == "movement" %}
+    <table class="master_table">
+        <tr>
+            <th>Movement ID</th>
+            <th>TimeStamp</th>
+            <th>Product ID</th>
+            <th>Product Qty</th>
+            <th>From Location</th>
+            <th>To Location</th>
+            <th>Function</th>
+        </tr>
+        <tr>
+            <td>{{movement.movement_id}}</td>
+            <td>{{movement.timestamp}}</td>
+            <td>{{movement.product_id}}</td>
+            <td>{{movement.product_qty}}</td>
+            <td>{{movement.from_location}}</td>
+            <td>{{movement.to_location}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <form action="../update/{{movement.movement_id}}", method="POST">
+                {{mov_form.csrf_token}}
+                <td></td>
+                <td></td>
+                <td>{{mov_form.prod_id_mov}}</td>
+                <td>{{mov_form.prod_qty_mov}}</td>
+                <td>{{mov_form.from_loc}}</td>
+                <td>{{mov_form.to_loc}}</td>
+                <td>{{mov_form.edit_mov}}</td>
+            </form>
+        </tr>
+    {% endif %}
+</body>
+</html>
