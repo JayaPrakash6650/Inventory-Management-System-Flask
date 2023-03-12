@@ -6,7 +6,7 @@
         <tr>
             <th>Movement ID</th>
             <th>TimeStamp</th>
-            <th>Product ID</th>
+            <th>Product Name</th>
             <th>Product Qty</th>
             <th>From Location</th>
             <th>To Location</th>
@@ -16,7 +16,7 @@
         <tr>
             <td>{{movement.movement_id}}</td>
             <td>{{movement.timestamp}}</td>
-            <td>{{movement.product_id}}</td>
+            <td>{{movement.product_name}}</td>
             <td>{{movement.product_qty}}</td>
             <td>{{movement.from_location}}</td>
             <td>{{movement.to_location}}</td>
@@ -32,7 +32,7 @@
                 {{mov_form.csrf_token}}
                 <td></td>
                 <td></td>
-                <td>{{mov_form.prod_id_mov}}</td>
+                <td>{{mov_form.prod_name_mov}}</td>
                 <td>{{mov_form.prod_qty_mov}}</td>
                 <td>{{mov_form.from_loc}}</td>
                 <td>{{mov_form.to_loc}}</td>
