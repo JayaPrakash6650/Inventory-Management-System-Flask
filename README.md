@@ -10,6 +10,6 @@ Day 1 was the crust of the learning experience where I had to learn SQLAlchemy (
 
 Day 2 was a day of progress where I had to scrap all the input forms I used and replace it with the almighty WTForms that I newly learned. It was a lot of hassle to get the flask routes to work properly for adding and updating the database through html. But nonetheless the assignment has been completed. :)
 
-Although there is probably plenty to improve upon like the CSS styles (It's ancient right now...) not to mention the bugs I've yet to uncover... :(
-And I'm pretty sure I didn't get the point of the application right (Cause currently it only feels like a notepad -_-)
+Day 3 was a day of burnout where I've given up on trying to think of a logic for the overview function which probably is the crux of the system :/ . Well, atleast fixed most of the bugs and the forms work perfectly. That is something to celebrate I guess.
+
 But in any case, this is the end for this assignment at this point of time. I might come back to this in the future (If I'm in the full-stack web-dev side of things).
